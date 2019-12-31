@@ -196,7 +196,7 @@ server.post('/login', (req, res) => {
   // Express will serve up production assets
   server.use(express.static(path.join(__dirname, 'build')))
   // Express will serve up the front-end index.html file if it doesn't recognize the route
-  app.get("*", (req, res) =>
+  server.get("*", (req, res) =>
     res.sendFile(path.resolve("build", "index.html"))
   );
 
